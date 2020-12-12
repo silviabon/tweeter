@@ -1,0 +1,29 @@
+#new-tweet{
+  margin-bottom: 1.5em;
+}
+
+#tweet-text{
+  width: 100%;
+  background: transparent;
+  border-width: 0;
+  border-bottom-width: 3px;
+  height: 1.5em;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+#new-tweet div{
+  font-family: 'Bungee', sans-serif;
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+}
+
+#new-tweet button{
+  color: white;
+  background-color: #4056A1;
+}
+
+.counterInvalid{
+  color: red;
+}

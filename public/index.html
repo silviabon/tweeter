@@ -1,29 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Meta Information -->
-    <title>Tweeter - Home Page</title>
 
-    <!-- External CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
+<head>
+  <!-- Meta Information -->
+  <title>Tweeter - Home Page</title>
 
-    <!-- App CSS -->
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <!-- External CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    type="text/css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap"
+    rel="stylesheet">
 
-    <!-- External JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- App CSS -->
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/new_tweet.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
 
-    <!-- App JS -->
-    <script type="text/javascript" src="/scripts/client.js"></script>
-  </head>
+  <!-- External JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-  <body>
-    <!-- Top nav bar (fixed) -->
-    <nav>
-      <span>tweeter</span>
-    </nav>
+  <!-- App JS -->
+  <script type="text/javascript" src="/scripts/client.js"></script>
+  <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
 
-    <!-- Page-specific (main) content here -->
-    <main class="container"></main>
-  </body>
+</head>
+
+<body>
+  <!-- Top nav bar (fixed) -->
+  <nav>
+    <span id="logo">tweeter</span><span><span style="font-weight: bold;">Write</span> a new tweet</span>
+  </nav>
+
+  <header>
+    <div>
+      <img src="/images/profile-hex.png">
+    </div>
+    <div>
+      <h2>
+        Silvia<span style="font-weight: normal;"> Bon</span>
+      </h2>
+    </div>
+  </header>
+
+  <!-- Page-specific (main) content here -->
+  <main class="container">
+    <section id="new-tweet">
+      <h2>Compose Tweet</h2>
+      <form method="POST" action="/tweets">
+        <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
+        <div>
+          <button type="submit">Tweet</button>
+          <output name="counter" id="counter" class="counterValid" for="tweet-text">140</output>
+        </div>
+      </form>
+    </section>
+
+    <section id="tweets-container">
+      <article class="tweet">
+        <header>
+          <div><img src="">some image <span>Name</span></div>
+          <span>@userid</span>
+        </header>
+        <p>This is the tweet text. Bla bla bla.</p>
+        <footer>
+          <span>10 days ago</span>
+          <div>
+            icons
+          </div>
+        </footer>
+      </article>
+
+      <article class="tweet">
+        <header>
+          <div><img src="">some image <span>Name</span></div>
+          <span>@userid</span>
+        </header>
+        <p>This is the tweet text. Bla bla bla.</p>
+        <footer>
+          <span>10 days ago</span>
+          <div>
+            icons
+          </div>
+        </footer>
+      </article>
+      <article class="tweet">
+        <header>
+          <div><img src="">some image <span>Name</span></div>
+          <span>@userid</span>
+        </header>
+        <p>This is the tweet text. Bla bla bla.</p>
+        <footer>
+          <span>10 days ago</span>
+          <div>
+            icons
+          </div>
+        </footer>
+      </article>
+      <article class="tweet">
+        <header>
+          <div><img src="">some image <span>Name</span></div>
+          <span>@userid</span>
+        </header>
+        <p>This is the tweet text. Bla bla bla.</p>
+        <footer>
+          <span>10 days ago</span>
+          <div>
+            icons
+          </div>
+        </footer>
+      </article>
+      <article class="tweet">
+        <header>
+          <div><img src="">some image <span>Name</span></div>
+          <span>@userid</span>
+        </header>
+        <p>This is the tweet text. Bla bla bla.</p>
+        <footer>
+          <span>10 days ago</span>
+          <div>
+            icons
+          </div>
+        </footer>
+      </article>
+      <article class="tweet">
+        <header>
+          <div><img src="">some image <span>Name</span></div>
+          <span>@userid</span>
+        </header>
+        <p>This is the tweet text. Bla bla bla.</p>
+        <footer>
+          <span>10 days ago</span>
+          <div>
+            icons
+          </div>
+        </footer>
+      </article>
+
+    </section>
+
+  </main>
+</body>
+
 </html>

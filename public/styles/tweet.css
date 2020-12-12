@@ -1,0 +1,52 @@
+/* TWEET CONTAINER  */
+/* ******* */
+article.tweet{
+  border-width: 3px;
+  border-style: solid;
+  margin: 1em 0 1em 0;
+  padding: 0.3em;
+}
+article.tweet:hover{
+  box-shadow: 10px 10px lightgray;
+}
+article.tweet > * {
+  opacity: 0.7;
+}
+article.tweet:hover > *{
+  opacity: 1;
+}
+
+/* HEADER  */
+/* ******* */
+article.tweet header{
+  display: flex;
+  justify-content: space-between;
+}
+article.tweet header > span{ /* user id  */
+  opacity: 0;
+}
+article.tweet:hover header > span {
+  opacity: 0.7;
+}
+
+/* TWEET TEXT */
+/* ******* */
+article p{
+  font-weight: bold;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+/* FOOTER  */
+/* ******* */
+article.tweet footer{
+  display: flex;
+  justify-content: space-between;
+  border-top-style: solid;
+  border-top-width: 3px;
+  padding: 0.4em 0.4em 0.1em 0.4em;
+}
+article.tweet footer span{ /* tweet date */
+font-size: 0.7em;
+}
+
