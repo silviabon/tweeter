@@ -7,13 +7,11 @@
   background: transparent;
   border-width: 0;
   border-bottom-width: 3px;
-  height: 1.5em;
+  height: 2.5em;
   font-weight: bold;
-  margin-bottom: 0.5em;
 }
 
 #new-tweet div{
-  font-family: 'Bungee', sans-serif;
   display: flex;
   justify-content: space-between;
   font-weight: bold;
@@ -22,8 +20,24 @@
 #new-tweet button{
   color: white;
   background-color: #4056A1;
+  font-family: 'Bungee', sans-serif;
+  margin-top: 0.5em;
 }
 
-.counterInvalid{
+#new-tweet output{
+  font-family: 'Bungee', sans-serif;
+  margin-top: 0.5em;
+}
+
+.counterInvalid, .error-message{
   color: red;
+}
+
+#new-tweet .error-message{
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.red-border{
+  border-color: red;
 }

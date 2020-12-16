@@ -3,8 +3,8 @@
  */
 const textboxMaxChar = 140;
 
-function charLeftCounter(event) {
-  const charLeft = textboxMaxChar - $(this).val().length; // this refers to the textbox
+function charLeftCounter() {
+  const charLeft = textboxMaxChar - $('#tweet-text').val().length; // this refers to the textbox
   $('#counter').val(charLeft);
   if ((charLeft < 0 && !$('#counter').hasClass('counterInvalid'))
     || (charLeft >= 0 && $('#counter').hasClass('counterInvalid'))) {
@@ -16,3 +16,4 @@ $(document).ready(() => {
   // --- our code goes here ---
   $('#tweet-text').on('input', charLeftCounter);
 });
+

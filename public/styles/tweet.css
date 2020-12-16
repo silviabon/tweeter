@@ -22,6 +22,16 @@ article.tweet header{
   display: flex;
   justify-content: space-between;
 }
+article.tweet header > div{ /* div containing user avatar and name */
+  display: flex;
+}
+article.tweet header > div > span{ /* user name */
+  display: inline-flex;
+  align-items: center;
+}
+article.tweet header > div > img{ /* avatar */
+margin: 0.5em;
+}
 article.tweet header > span{ /* user id  */
   opacity: 0;
 }
@@ -33,8 +43,7 @@ article.tweet:hover header > span {
 /* ******* */
 article p{
   font-weight: bold;
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
+  margin: 1em 2em 1.5em 2em;
 }
 
 /* FOOTER  */

@@ -24,6 +24,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
   <!-- App JS -->
+  <script type="text/javascript" src="/scripts/scape-xss.js"></script>
   <script type="text/javascript" src="/scripts/client.js"></script>
   <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
 
@@ -50,8 +51,11 @@
   <main class="container">
     <section id="new-tweet">
       <h2>Compose Tweet</h2>
-      <form method="POST" action="/tweets">
+      <form id="new-tweet-form">
         <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
+        <div>
+          <p class="error-message hide"></p>
+        </div>
         <div>
           <button type="submit">Tweet</button>
           <output name="counter" id="counter" class="counterValid" for="tweet-text">140</output>
@@ -60,86 +64,7 @@
     </section>
 
     <section id="tweets-container">
-      <article class="tweet">
-        <header>
-          <div><img src="">some image <span>Name</span></div>
-          <span>@userid</span>
-        </header>
-        <p>This is the tweet text. Bla bla bla.</p>
-        <footer>
-          <span>10 days ago</span>
-          <div>
-            icons
-          </div>
-        </footer>
-      </article>
-
-      <article class="tweet">
-        <header>
-          <div><img src="">some image <span>Name</span></div>
-          <span>@userid</span>
-        </header>
-        <p>This is the tweet text. Bla bla bla.</p>
-        <footer>
-          <span>10 days ago</span>
-          <div>
-            icons
-          </div>
-        </footer>
-      </article>
-      <article class="tweet">
-        <header>
-          <div><img src="">some image <span>Name</span></div>
-          <span>@userid</span>
-        </header>
-        <p>This is the tweet text. Bla bla bla.</p>
-        <footer>
-          <span>10 days ago</span>
-          <div>
-            icons
-          </div>
-        </footer>
-      </article>
-      <article class="tweet">
-        <header>
-          <div><img src="">some image <span>Name</span></div>
-          <span>@userid</span>
-        </header>
-        <p>This is the tweet text. Bla bla bla.</p>
-        <footer>
-          <span>10 days ago</span>
-          <div>
-            icons
-          </div>
-        </footer>
-      </article>
-      <article class="tweet">
-        <header>
-          <div><img src="">some image <span>Name</span></div>
-          <span>@userid</span>
-        </header>
-        <p>This is the tweet text. Bla bla bla.</p>
-        <footer>
-          <span>10 days ago</span>
-          <div>
-            icons
-          </div>
-        </footer>
-      </article>
-      <article class="tweet">
-        <header>
-          <div><img src="">some image <span>Name</span></div>
-          <span>@userid</span>
-        </header>
-        <p>This is the tweet text. Bla bla bla.</p>
-        <footer>
-          <span>10 days ago</span>
-          <div>
-            icons
-          </div>
-        </footer>
-      </article>
-
+      <!-- Tweets are inserted here  -->
     </section>
 
   </main>
