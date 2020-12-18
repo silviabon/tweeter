@@ -44,14 +44,20 @@ function loadTweets() {
 
 $(document).ready(() => {
   const errorContainer = $('#new-tweet p.error-message');
+  const newTweetContainer = $('#new-tweet');
+  const tweetBox = $('#tweet-text');
+  const goUpButton = $('#goUpButton');
+  newTweetContainer.hide();
   errorContainer.hide();
+  goUpButton.hide();
+
   loadTweets();
 
   // Post new tweet from new tweet form
   const newTweetForm = $('#new-tweet-form');
+
   newTweetForm.on('submit', function (event) {
     event.preventDefault();
-    const tweetBox = $('#tweet-text');
     const tweet = tweetBox.val();
     tweetBox.removeClass('red-border');
     errorContainer.slideUp();
@@ -67,8 +73,7 @@ $(document).ready(() => {
       errorContainer.slideDown();
       return;
     }
-    /* Serialize the submitted form control values to be sent to the web server with the request */
-    const formValues = $(this).serialize();
+    const formValues = $(this).serialize(); /* Serialize the submitted form control values to be sent to the web server with the request */
     $.ajax('/tweets', { method: 'POST', data: formValues })
       .then(() => {
         loadTweets();
@@ -78,5 +83,33 @@ $(document).ready(() => {
       });
     tweetBox.val('');
     charLeftCounter();
+  });
+
+  $('nav button').hover(() => {
+    const arrows = $('#write_tweet_animation');
+    arrows.filter(':not(:animated)').animate({ top: '15px' }, 500, () => {
+      arrows.animate({ top: '0px' }, 500);
+    });
+  });
+
+  $('nav button').click(() => {
+    newTweetContainer.slideToggle('slow', () => {
+      tweetBox.focus();
+    });
+  });
+
+  $(window).scroll(() => {
+    if ($(window).scrollTop() > $('body header').height()) {
+      goUpButton.show();
+    } else {
+      goUpButton.hide();
+    }
+  });
+
+  goUpButton.click(() => {
+    newTweetContainer.show();
+    setTimeout(() => {
+      tweetBox.focus();
+    }, 200);
   });
 });

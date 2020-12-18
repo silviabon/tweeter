@@ -11,6 +11,10 @@
   font-weight: bold;
 }
 
+#tweet-text:focus{
+  outline: none;
+}
+
 #new-tweet div{
   display: flex;
   justify-content: space-between;

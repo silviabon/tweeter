@@ -16,3 +16,32 @@ nav {
 #logo{
   font-family: 'Bungee', sans-serif;
 }
+
+nav > div{  /* Div that contains button "write new tweet" */
+  display: flex;
+  flex-direction: column;
+}
+nav button{
+  color: white;
+  background-color: #4056A1;
+  border: none;
+  outline: none;
+}
+
+nav button:hover{
+  font-weight: bold;
+  cursor: pointer;
+}
+
+nav button span{
+  font-weight: bold;
+}
+
+#write_tweet_animation{
+  align-self: center;
+  max-width: 1rem;
+  height: auto;
+  position: relative;
+
+}
+

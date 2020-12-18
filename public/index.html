@@ -30,10 +30,14 @@
 
 </head>
 
-<body>
+<body id='top'>
   <!-- Top nav bar (fixed) -->
   <nav>
-    <span id="logo">tweeter</span><span><span style="font-weight: bold;">Write</span> a new tweet</span>
+    <span id="logo">tweeter</span>
+    <div>
+      <a href="#top"><button><span>Write</span> a new tweet</button></a>
+      <img id="write_tweet_animation" src="/images/arrows.png">
+    </div>
   </nav>
 
   <header>
@@ -67,7 +71,11 @@
       <!-- Tweets are inserted here  -->
     </section>
 
+
   </main>
+  <a id="goUpButton" href="#top">
+    <div><img src="/images/arrows.png"></div>
+  </a>
 </body>
 
 </html>
