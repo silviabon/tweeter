@@ -6,6 +6,7 @@
 
 // Create a tweet element to be added to the page
 function createTweetElement(tweet) {
+  const date = formatDate(tweet.created_at);
   const aTweet = `<article class="tweet">
                     <header>
                         <div><img src="${tweet.user.avatars}"><span>${tweet.user.name}</span></div>
@@ -13,9 +14,11 @@ function createTweetElement(tweet) {
                       </header>
                       <p>${scape(tweet.content.text)}</p>
                       <footer>
-                        <span>${new Date(tweet.created_at)}</span>
+                        <span>${date}</span>
                         <div>
-                          icons
+                        <img src="../images/flag.png">
+                        <img src="../images/fwd.png">
+                        <img src="../images/heart.png">
                         </div>
                       </footer>
                     </article>
@@ -99,7 +102,7 @@ $(document).ready(() => {
   });
 
   $(window).scroll(() => {
-    if ($(window).scrollTop() > $('body header').height()) {
+    if ($(window).scrollTop() > $('nav').outerHeight()) {
       goUpButton.show();
     } else {
       goUpButton.hide();
@@ -113,3 +116,52 @@ $(document).ready(() => {
     }, 200);
   });
 });
+
+
+function convertMiliseconds(miliseconds, format) {
+  let days;
+  let hours;
+  let minutes;
+  let seconds;
+  let total_hours;
+  let total_minutes;
+  let total_seconds;
+
+  total_seconds = parseInt(Math.floor(miliseconds / 1000));
+  total_minutes = parseInt(Math.floor(total_seconds / 60));
+  total_hours = parseInt(Math.floor(total_minutes / 60));
+  days = parseInt(Math.floor(total_hours / 24));
+
+  seconds = parseInt(total_seconds % 60);
+  minutes = parseInt(total_minutes % 60);
+  hours = parseInt(total_hours % 24);
+
+  switch (format) {
+    case 's':
+      return total_seconds;
+    case 'm':
+      return total_minutes;
+    case 'h':
+      return total_hours;
+    case 'd':
+      return days;
+    default:
+      return {
+        d: days, h: hours, m: minutes, s: seconds,
+      };
+  }
+}
+
+// Show date as "x days ago"
+// If today, show as "today"
+function formatDate(originalDate) {
+  const diffDateNowOriginal = new Date() - new Date(originalDate);
+  const convertedTimeDiff = convertMiliseconds(diffDateNowOriginal);
+  if (convertedTimeDiff.d > 1) {
+    return `${convertedTimeDiff.d} days ago`;
+  }
+  if (convertedTimeDiff.d > 0) {
+    return 'yesterday';
+  }
+  return 'today';
+}

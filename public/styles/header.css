@@ -10,3 +10,10 @@ body > header{
   background-color: #ffb600;
   background-image: url("https://www.transparenttextures.com/patterns/low-contrast-linen.png");
 }
+
+@media only screen and (min-width: 1024px) {
+  body > header{
+    width: 40%;
+    margin: 200px 60px 0 60px;
+  }
+}
