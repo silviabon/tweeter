@@ -1,0 +1,230 @@
+body > header {
+  margin-top: 120px;
+  height: 400px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffb600;
+  background-image: url("https://www.transparenttextures.com/patterns/low-contrast-linen.png");
+}
+
+@media only screen and (min-width: 1024px) {
+  body > header {
+    width: 40%;
+    margin: 200px 60px 0 60px;
+  }
+}
+html {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+}
+
+/*
+ * Global layout stuff
+ */
+body {
+  color: #545149;
+  background-color: #f4f1ec;
+  font-size: 24px;
+  font-family: "Source Sans Pro", sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  width: 90%;
+  background-color: inherit;
+  align-self: center;
+}
+
+/* GO UP BUTTON  */
+/* ******* */
+#goUpButton {
+  position: fixed;
+  bottom: 0.5em;
+  right: 0.5em;
+}
+#goUpButton > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ff0000;
+  border-radius: 50%;
+  height: 2.5em;
+  width: 2.5em;
+}
+#goUpButton img {
+  filter: brightness(0) saturate(100%);
+  filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(315deg) brightness(101%) contrast(101%);
+  transform: rotate(180deg);
+  height: 1em;
+  width: auto;
+}
+
+@media only screen and (min-width: 1024px) {
+  body {
+    flex-direction: row;
+  }
+
+  main {
+    margin-top: 120px;
+    width: 60%;
+    padding: 60px;
+  }
+}
+nav {
+  position: fixed;
+  top: 0;
+  height: 120px;
+  width: 100%;
+  background-color: #4056A1;
+  color: #FFFFFF;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5em;
+  z-index: 9999;
+}
+nav > div {
+  /* Div that contains button "write new tweet" */
+  display: flex;
+  flex-direction: column;
+}
+nav button {
+  color: white;
+  background-color: #4056A1;
+  border: none;
+  outline: none;
+}
+nav button span {
+  font-weight: bold;
+}
+nav button:hover {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#logo {
+  font-family: "Bungee", sans-serif;
+}
+
+#write_tweet_animation {
+  align-self: center;
+  max-width: 1rem;
+  height: auto;
+  position: relative;
+}
+
+#new-tweet {
+  margin-bottom: 1.5em;
+}
+#new-tweet div {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+}
+#new-tweet button {
+  color: white;
+  background-color: #4056A1;
+  font-family: "Bungee", sans-serif;
+  margin-top: 0.5em;
+}
+#new-tweet output {
+  font-family: "Bungee", sans-serif;
+  margin-top: 0.5em;
+}
+#new-tweet .error-message {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#tweet-text {
+  width: 100%;
+  background: transparent;
+  border-width: 0;
+  border-bottom-width: 3px;
+  height: 2.5em;
+  font-weight: bold;
+}
+
+#tweet-text:focus {
+  outline: none;
+}
+
+.counterInvalid, .error-message {
+  color: red;
+}
+
+.red-border {
+  border-color: red;
+}
+
+article.tweet {
+  border-width: 3px;
+  border-style: solid;
+  margin: 1em 0 1em 0;
+  padding: 0.3em;
+}
+article.tweet > * {
+  opacity: 0.7;
+}
+article.tweet header {
+  display: flex;
+  justify-content: space-between;
+}
+article.tweet header > span {
+  /* user id  */
+  opacity: 0;
+}
+article.tweet header > div {
+  /* div containing user avatar and name */
+  display: flex;
+}
+article.tweet header > div > span {
+  /* user name */
+  display: inline-flex;
+  align-items: center;
+}
+article.tweet header > div > img {
+  /* avatar */
+  margin: 0.5em;
+}
+article.tweet footer {
+  display: flex;
+  justify-content: space-between;
+  border-top-style: solid;
+  border-top-width: 3px;
+  padding: 0.4em 0.4em 0.1em 0.4em;
+}
+article.tweet footer span {
+  /* tweet date */
+  font-size: 0.7em;
+}
+
+article.tweet:hover {
+  box-shadow: 10px 10px lightgray;
+}
+article.tweet:hover > * {
+  opacity: 1;
+}
+article.tweet:hover header > span {
+  opacity: 0.7;
+}
+
+/* TWEET TEXT */
+/* ******* */
+article p {
+  font-weight: bold;
+  margin: 1em 2em 1.5em 2em;
+}
+
+/*# sourceMappingURL=output.css.map */

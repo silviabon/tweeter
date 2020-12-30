@@ -1,0 +1,67 @@
+$font-stack-main:    'Source Sans Pro', sans-serif;
+$font-stack-secondary: 'Bungee', sans-serif;
+
+html {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+}
+
+/*
+ * Global layout stuff
+ */
+
+body {
+  color: #545149;
+  background-color: #f4f1ec;
+  font-size: 24px;
+  font-family: $font-stack-main;
+  display: flex;
+  flex-direction: column;
+}
+
+main{
+  width: 90%;
+  background-color: inherit;
+  align-self: center;
+}
+
+/* GO UP BUTTON  */
+/* ******* */
+#goUpButton{
+  position: fixed; 
+  bottom: 0.5em;
+  right: 0.5em;
+  > div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ff0000;
+    border-radius: 50%;
+    height: 2.5em;
+    width: 2.5em;
+  }
+  img{
+    filter: brightness(0) saturate(100%);
+    filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(315deg) brightness(101%) contrast(101%);
+    transform: rotate(180deg);  
+    height: 1em;
+    width: auto;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  body{
+    flex-direction: row;
+  }
+  main{
+    margin-top: 120px;  
+    width: 60%;
+    padding: 60px;
+  }
+}

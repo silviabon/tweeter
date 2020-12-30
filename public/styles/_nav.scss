@@ -1,0 +1,45 @@
+
+@use 'layout';
+nav {
+  position: fixed;
+  top: 0;
+  height: 120px;
+  width: 100%;
+  background-color: #4056A1;
+  color: #FFFFFF;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5em;
+  z-index: 9999;
+  > div{  /* Div that contains button "write new tweet" */
+    display: flex;
+    flex-direction: column;
+  }
+  button{
+    color: white;
+    background-color: #4056A1;
+    border: none;
+    outline: none;
+    span{
+      font-weight: bold;
+    }
+  }
+  button:hover{
+    font-weight: bold;
+    cursor: pointer;
+  }
+}
+
+#logo{
+  font-family: layout.$font-stack-secondary;
+}
+
+#write_tweet_animation{
+  align-self: center;
+  max-width: 1rem;
+  height: auto;
+  position: relative;
+
+}
+

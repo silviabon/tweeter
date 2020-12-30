@@ -1,0 +1,46 @@
+@use 'layout';
+
+#new-tweet{
+  margin-bottom: 1.5em;
+  div{
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+  }
+  button{
+    color: white;
+    background-color: #4056A1;
+    font-family: 'Bungee', sans-serif;
+    margin-top: 0.5em;
+  }
+  output{
+    font-family: layout.$font-stack-secondary;
+    margin-top: 0.5em;
+  }
+  .error-message{
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+#tweet-text{
+  width: 100%;
+  background: transparent;
+  border-width: 0;
+  border-bottom-width: 3px;
+  height: 2.5em;
+  font-weight: bold;
+}
+
+#tweet-text:focus{
+  outline: none;
+}
+
+.counterInvalid, .error-message{
+  color: red;
+}
+
+.red-border{
+  border-color: red;
+}
+
